@@ -21,8 +21,11 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
 
+      - name: Run analyzer (optional)
+        run: flutter analyze
+
       - name: Build APK
-        run: flutter build apk --release --no-sound-null-safety
+        run: flutter build apk --release
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
