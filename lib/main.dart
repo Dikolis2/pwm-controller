@@ -41,14 +41,14 @@ class _BLEScreenState extends State<BLEScreen> {
   @override
   void initState() {
     FlutterBluePlus.startScan(timeout: const Duration(seconds: 4));
-    FlutterBluePlus.scanResults.listen((results) {
-      for (var result in results) {
-        if (result.device.name == "ESP32-PWM") {
-          FlutterBluePlus.stopScan();
-          connectToDevice(result.device);
-        }
-      }
-    });
+ FlutterBluePlus.scanResults.listen((results) {
+  for (var result in results) {
+    if (result.device.platformName == "ESP32-PWM") {
+      FlutterBluePlus.stopScan();
+      connectToDevice(result.device);
+    }
+  }
+});
     super.initState();
   }
 
