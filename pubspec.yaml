@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_blue_plus: ^1.5.0
+  flutter_blue_plus: ^1.6.0  # или последняя версия
 
 flutter:
   uses-material-design: true
